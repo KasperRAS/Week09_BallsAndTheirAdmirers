@@ -2,3 +2,4 @@
 -g
 -O2
 -Iinclude
+-I../raylib-5.5/include

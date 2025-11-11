@@ -8,6 +8,11 @@
       "args": [
 //          "-###",
           "'@.vscode/compile_flags.txt'",
+          "-lmsvcrt",                       //  Raylib
+          "-lraylib",                       //  Raylib
+          "-lgdi32",                        //  Raylib
+          "-lwinmm",                        //  Raylib
+          "-L../raylib-5.5/lib",            //  Raylib
           "./src/main.c",
           "-o",
           "balls_and_their_admirers"

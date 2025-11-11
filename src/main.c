@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <time.h>                    // For at kunne bruge time() til seeds.
 
 #define WIDTH 400
 #define HEIGHT 400
@@ -21,6 +22,14 @@ Color COLORS[] = {
 // Definition of Ball
 // Ball stores state and other properties
 // YOUR CODE HERE
+    typedef struct Ball {
+        int   posx, posy;
+        int   velx, vely;
+        int   radius;
+        Color color;
+        struct Ball *follows;
+    } 
+    Ball;
 
 Ball balls[BALL_COUNT];
 
@@ -28,10 +37,33 @@ Ball balls[BALL_COUNT];
 Ball *init_ball_random(Ball *p) {
   // Randomly initialize state and properties
   // YOUR CODE HERE
+    p->posx = rand() % WIDTH;
+    p->posy = rand() % HEIGHT;
+
+    int vx = (rand() % (2 * VEL_MAX + 1)) - VEL_MAX;
+    int vy = (rand() % (2 * VEL_MAX + 1)) - VEL_MAX;
+    if (vx == 0) vx = (rand() % 2) ? 1 : -1;
+    if (vy == 0) vy = (rand() % 2) ? 1 : -1;
+    p->velx = vx;
+    p->vely = vy;
+
+    p->radius = RADIUS_MIN + (rand() % (RADIUS_MAX - RADIUS_MIN + 1));
+
+    size_t farve_antal = sizeof(COLORS) / sizeof(COLORS[0]);
+    p->color = COLORS[rand() % farve_antal];
 
   // Find a leading ball other than the initialized ball itself.
   Ball *leader; // Represents the leading ball that this ball will follow
   // YOUR CODE HERE
+    if (BALL_COUNT > 1) {
+        do {
+            leader = &balls[rand() % BALL_COUNT];
+        } while (leader == p);
+            p->follows = leader;
+        } 
+    else {
+        p->follows = NULL;
+    }
 
   return p;
 }
@@ -39,6 +71,9 @@ Ball *init_ball_random(Ball *p) {
 // Initialize all `balls`
 void init_balls_random() {
   // YOUR CODE HERE
+    for (size_t i = 0; i < BALL_COUNT; ++i) {
+        init_ball_random(&balls[i]);
+    }
 }
 
 Ball *draw_ball(Ball *p) {
@@ -74,9 +109,11 @@ int main() {
   InitWindow(WIDTH, HEIGHT, TITLE);
   SetTargetFPS(FPS);
 
+  srand(time(NULL));                // Sikrer et tilfældigt seed hver gang.
+
   init_balls_random();
 
-  while (!WindowShouldClose()) // Detect window close button or ESC key
+  while (!WindowShouldClose())      // Detect window close button or ESC key
   {
     BeginDrawing();
     update_elements();

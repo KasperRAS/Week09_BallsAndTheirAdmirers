@@ -1,0 +1,168 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="435pt" height="719pt" viewBox="0.00 0.00 435.5 719.4">
+<g id="graph0" class="graph" transform="translate(54.60148071000225,640.4963970807647) scale(0.8705505632961241)" data-name="BallsAdmirers">
+
+<polygon fill="white" stroke="none" points="-36,36 -36,-683.4 399.5,-683.4 399.5,36 -36,36"/>
+<!-- start -->
+<g id="node1" class="node" pointer-events="visible" data-name="start">
+
+<polygon fill="none" stroke="black" points="236.49,-647.4 182.49,-647.4 182.49,-611.4 236.49,-611.4 236.49,-647.4"/>
+<text text-anchor="middle" x="209.49" y="-626.1" font-family="Times,serif" font-size="11.00">Start</text>
+</g>
+<!-- win -->
+<g id="node2" class="node" pointer-events="visible" data-name="win">
+
+<polygon fill="none" stroke="black" points="264.9,-574.4 154.08,-574.4 154.08,-538.4 264.9,-538.4 264.9,-574.4"/>
+<text text-anchor="middle" x="209.49" y="-559.7" font-family="Times,serif" font-size="11.00">Opret visningsvindue</text>
+<text text-anchor="middle" x="209.49" y="-546.5" font-family="Times,serif" font-size="11.00">(Opsæt FPS)</text>
+</g>
+<!-- start&#45;&gt;win -->
+<g id="edge1" class="edge" data-name="start-&gt;win">
+
+<path fill="none" stroke="black" d="M209.49,-611.21C209.49,-603.63 209.49,-594.5 209.49,-585.94"/>
+<polygon fill="black" stroke="black" points="212.99,-585.94 209.49,-575.94 205.99,-585.94 212.99,-585.94"/>
+</g>
+<!-- seed -->
+<g id="node3" class="node" pointer-events="visible" data-name="seed">
+
+<polygon fill="none" stroke="black" points="283.58,-501.4 135.4,-501.4 135.4,-465.4 283.58,-465.4 283.58,-501.4"/>
+<text text-anchor="middle" x="209.49" y="-486.7" font-family="Times,serif" font-size="11.00">Randomisering af starttilstand</text>
+<text text-anchor="middle" x="209.49" y="-473.5" font-family="Times,serif" font-size="11.00">(Tidsbaseret seed m. time() )</text>
+</g>
+<!-- win&#45;&gt;seed -->
+<g id="edge2" class="edge" data-name="win-&gt;seed">
+
+<path fill="none" stroke="black" d="M209.49,-538.21C209.49,-530.63 209.49,-521.5 209.49,-512.94"/>
+<polygon fill="black" stroke="black" points="212.99,-512.94 209.49,-502.94 205.99,-512.94 212.99,-512.94"/>
+</g>
+<!-- init -->
+<g id="node4" class="node" pointer-events="visible" data-name="init">
+
+<polygon fill="none" stroke="black" points="316.14,-428.2 102.84,-428.2 102.84,-381 316.14,-381 316.14,-428.2"/>
+<text text-anchor="middle" x="209.49" y="-414.5" font-family="Times,serif" font-size="11.00">Initier elementer:</text>
+<text text-anchor="middle" x="209.49" y="-401.3" font-family="Times,serif" font-size="11.00"> - Tilfældig position/hastighed/størrelse/farve</text>
+<text text-anchor="middle" x="209.49" y="-388.1" font-family="Times,serif" font-size="11.00">- Vælg en leder (ikke sig selv)</text>
+</g>
+<!-- seed&#45;&gt;init -->
+<g id="edge3" class="edge" data-name="seed-&gt;init">
+
+<path fill="none" stroke="black" d="M209.49,-464.97C209.49,-457.55 209.49,-448.62 209.49,-439.96"/>
+<polygon fill="black" stroke="black" points="212.99,-440.01 209.49,-430.01 205.99,-440.01 212.99,-440.01"/>
+</g>
+<!-- loop -->
+<g id="node5" class="node" pointer-events="visible" data-name="loop">
+
+<polygon fill="none" stroke="black" points="209.49,-343.8 154.74,-325.8 209.49,-307.8 264.24,-325.8 209.49,-343.8"/>
+<text text-anchor="middle" x="209.49" y="-322.5" font-family="Times,serif" font-size="11.00">Ny frame?</text>
+</g>
+<!-- init&#45;&gt;loop -->
+<g id="edge4" class="edge" data-name="init-&gt;loop">
+
+<path fill="none" stroke="black" d="M209.49,-380.56C209.49,-372.72 209.49,-363.86 209.49,-355.63"/>
+<polygon fill="black" stroke="black" points="212.99,-355.72 209.49,-345.72 205.99,-355.72 212.99,-355.72"/>
+</g>
+<!-- steer -->
+<g id="node6" class="node" pointer-events="visible" data-name="steer">
+
+<polygon fill="none" stroke="black" points="341.79,-255 203.18,-255 203.18,-219 341.79,-219 341.79,-255"/>
+<text text-anchor="middle" x="272.49" y="-240.3" font-family="Times,serif" font-size="11.00">For alle elementer: </text>
+<text text-anchor="middle" x="272.49" y="-227.1" font-family="Times,serif" font-size="11.00"> Justér bevægelse mod leder</text>
+</g>
+<!-- loop&#45;&gt;steer -->
+<g id="edge5" class="edge" data-name="loop-&gt;steer">
+
+<path fill="none" stroke="black" d="M219.61,-310.85C228.71,-298.31 242.32,-279.56 253.46,-264.22"/>
+<polygon fill="black" stroke="black" points="256.08,-266.57 259.12,-256.42 250.41,-262.46 256.08,-266.57"/>
+<text text-anchor="middle" x="252.32" y="-277.2" font-family="Times,serif" font-size="14.00">Ja</text>
+</g>
+<!-- stop -->
+<g id="node11" class="node" pointer-events="visible" data-name="stop">
+
+<polygon fill="none" stroke="black" points="178.07,-255 74.91,-255 74.91,-219 178.07,-219 178.07,-255"/>
+<text text-anchor="middle" x="126.49" y="-240.3" font-family="Times,serif" font-size="11.00">Luk visningsvindue</text>
+<text text-anchor="middle" x="126.49" y="-227.1" font-family="Times,serif" font-size="11.00">og ryd op</text>
+</g>
+<!-- loop&#45;&gt;stop -->
+<g id="edge11" class="edge" data-name="loop-&gt;stop">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M196.88,-311.62C184.72,-298.89 165.97,-279.29 150.88,-263.51"/>
+<polygon fill="black" stroke="black" points="153.43,-261.1 143.98,-256.3 148.37,-265.94 153.43,-261.1"/>
+<text text-anchor="middle" x="184.6" y="-277.2" font-family="Times,serif" font-size="14.00">Nej</text>
+</g>
+<!-- move -->
+<g id="node7" class="node" pointer-events="visible" data-name="move">
+
+<polygon fill="none" stroke="black" points="363.51,-182 179.47,-182 179.47,-146 363.51,-146 363.51,-182"/>
+<text text-anchor="middle" x="271.49" y="-167.3" font-family="Times,serif" font-size="11.00">Opdater positioner</text>
+<text text-anchor="middle" x="271.49" y="-154.1" font-family="Times,serif" font-size="11.00">(Med wrap inden for visningsområde)</text>
+</g>
+<!-- steer&#45;&gt;move -->
+<g id="edge6" class="edge" data-name="steer-&gt;move">
+
+<path fill="none" stroke="black" d="M272.25,-218.81C272.14,-211.23 272.01,-202.1 271.89,-193.54"/>
+<polygon fill="black" stroke="black" points="275.39,-193.49 271.75,-183.54 268.39,-193.59 275.39,-193.49"/>
+</g>
+<!-- draw -->
+<g id="node8" class="node" pointer-events="visible" data-name="draw">
+
+<polygon fill="none" stroke="black" points="250.33,-109 146.65,-109 146.65,-73 250.33,-73 250.33,-109"/>
+<text text-anchor="middle" x="198.49" y="-87.7" font-family="Times,serif" font-size="11.00">Tegn alle elementer</text>
+</g>
+<!-- move&#45;&gt;draw -->
+<g id="edge7" class="edge" data-name="move-&gt;draw">
+
+<path fill="none" stroke="black" d="M253.82,-145.81C245.01,-137.24 234.18,-126.71 224.44,-117.24"/>
+<polygon fill="black" stroke="black" points="226.94,-114.79 217.34,-110.33 222.06,-119.81 226.94,-114.79"/>
+</g>
+<!-- present -->
+<g id="node9" class="node" pointer-events="visible" data-name="present">
+
+<polygon fill="none" stroke="black" points="94.43,-36 8.55,-36 8.55,0 94.43,0 94.43,-36"/>
+<text text-anchor="middle" x="51.49" y="-14.7" font-family="Times,serif" font-size="11.00">Præsenter frame</text>
+</g>
+<!-- draw&#45;&gt;present -->
+<g id="edge8" class="edge" data-name="draw-&gt;present">
+
+<path fill="none" stroke="black" d="M162.53,-72.63C143.04,-63.22 118.74,-51.48 97.85,-41.39"/>
+<polygon fill="black" stroke="black" points="99.48,-38.29 88.95,-37.09 96.43,-44.59 99.48,-38.29"/>
+</g>
+<!-- cont -->
+<g id="node10" class="node" pointer-events="visible" data-name="cont">
+
+<polygon fill="none" stroke="black" points="52.49,-343.8 0.01,-325.8 52.49,-307.8 104.97,-325.8 52.49,-343.8"/>
+<text text-anchor="middle" x="52.49" y="-322.5" font-family="Times,serif" font-size="11.00">Fortsætte?</text>
+</g>
+<!-- present&#45;&gt;cont -->
+<g id="edge9" class="edge" data-name="present-&gt;cont">
+
+<path fill="none" stroke="black" d="M45.73,-36.29C41.5,-50.54 36.49,-71.35 36.49,-90 36.49,-238 36.49,-238 36.49,-238 36.49,-258.42 40.82,-281.1 44.98,-298.15"/>
+<polygon fill="black" stroke="black" points="41.51,-298.69 47.4,-307.5 48.28,-296.94 41.51,-298.69"/>
+</g>
+<!-- cont&#45;&gt;loop -->
+<g id="edge10" class="edge" data-name="cont-&gt;loop">
+
+<path fill="none" stroke="black" d="M106.08,-325.8C117.59,-325.8 129.9,-325.8 141.87,-325.8"/>
+<polygon fill="black" stroke="black" points="141.68,-329.3 151.68,-325.8 141.68,-322.3 141.68,-329.3"/>
+<text text-anchor="middle" x="129.8" y="-333" font-family="Times,serif" font-size="14.00">Ja</text>
+</g>
+<!-- cont&#45;&gt;stop -->
+<g id="edge12" class="edge" data-name="cont-&gt;stop">
+
+<path fill="none" stroke="black" d="M64.05,-311.24C74.79,-298.64 91.07,-279.55 104.31,-264.02"/>
+<polygon fill="black" stroke="black" points="106.89,-266.39 110.71,-256.51 101.56,-261.85 106.89,-266.39"/>
+<text text-anchor="middle" x="105.6" y="-277.2" font-family="Times,serif" font-size="14.00">Nej</text>
+</g>
+<!-- end -->
+<g id="node12" class="node" pointer-events="visible" data-name="end">
+
+<polygon fill="none" stroke="black" points="153.49,-182 99.49,-182 99.49,-146 153.49,-146 153.49,-182"/>
+<text text-anchor="middle" x="126.49" y="-160.7" font-family="Times,serif" font-size="11.00">Slut</text>
+</g>
+<!-- stop&#45;&gt;end -->
+<g id="edge13" class="edge" data-name="stop-&gt;end">
+
+<path fill="none" stroke="black" d="M126.49,-218.81C126.49,-211.23 126.49,-202.1 126.49,-193.54"/>
+<polygon fill="black" stroke="black" points="129.99,-193.54 126.49,-183.54 122.99,-193.54 129.99,-193.54"/>
+</g>
+</g>
+</svg>
